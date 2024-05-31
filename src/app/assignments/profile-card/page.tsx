@@ -58,7 +58,7 @@ function ProfileCard({
   return (
     <div className="p-5 bg-white border rounded-md mx-16">
       <div className="w-full flex justify-center pb-5">
-        <Image
+        <img
           className="rounded-full size-40"
           src={imageSrc}
           width={500}

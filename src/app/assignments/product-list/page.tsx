@@ -1,4 +1,5 @@
 import Header from "@/components/header";
+import { profile } from "console";
 
 interface IProduct {
   imageSrc?: string;
@@ -54,12 +55,14 @@ export default function Assignment1() {
           <div className="rounded-md bg-white w-52 h-72 border p-3 gap-1 flex flex-col">
             <div className="w-full aspect-square rounded-md">
               <img
-                src={product.imageSrc}
+                src={products[0].imageSrc}
                 className="rounded-md w-full aspect-square"
               />
             </div>
-            <div className="h-12 max-h-12 overflow-hidden">{product.title}</div>
-            <div className="font-bold">{product.price}</div>
+            <div className="h-12 max-h-12 overflow-hidden">
+              {products[0].title}
+            </div>
+            <div className="font-bold">{products[0].price}</div>
           </div>
           <div className="rounded-md bg-white w-52 h-72 border p-3 gap-1 flex flex-col">
             <div className="w-full aspect-square rounded-md">
@@ -96,6 +99,18 @@ export default function Assignment1() {
               {products[3].title}
             </div>
             <div className="font-bold">{products[3].price}</div>
+          </div>
+          <div className="rounded-md bg-white w-52 h-72 border p-3 gap-1 flex flex-col">
+            <div className="w-full aspect-square rounded-md">
+              <img
+                src={products[4].imageSrc}
+                className="rounded-md w-full aspect-square"
+              />
+            </div>
+            <div className="h-12 max-h-12 overflow-hidden">
+              {products[4].title}
+            </div>
+            <div className="font-bold">{products[4].price}</div>
           </div>
 
           {/* 여기까지 */}
