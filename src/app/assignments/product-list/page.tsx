@@ -7,6 +7,18 @@ interface IProduct {
   price: number;
 }
 
+function Mycomp(props: IProduct) {
+  return (
+    <div className="rounded-md bg-white w-52 h-72 border p-3 gap-1 flex flex-col">
+      <div className="w-full aspect-square rounded-md">
+        <img src={props.imageSrc} className="rounded-md w-full aspect-square" />
+      </div>
+      <div className="h-12 max-h-12 overflow-hidden">{props.title}</div>
+      <div className="font-bold">{props.price}</div>
+    </div>
+  );
+}
+
 export default function Assignment1() {
   const product: IProduct = {
     imageSrc: "https://gdimg.gmarket.co.kr/2004408943/still/300?ver=1712543662",
@@ -46,74 +58,27 @@ export default function Assignment1() {
     },
   ];
 
+  const 컴포넌트배열 = products.map((상품하나) => (
+    <Mycomp
+      title={상품하나.title}
+      imageSrc={상품하나.imageSrc}
+      price={상품하나.price}
+    />
+  ));
+
   return (
     <>
       <Header title={"상품목록 만들기"} hasBack={true} />
       <div className="w-full h-full flex flex-col overflow-y-auto py-5 px-5 gap-5 scrollbar-hide">
         <div className="w-full gap-4 grid grid-cols-2">
           {/* 여기서부터 */}
-          <div className="rounded-md bg-white w-52 h-72 border p-3 gap-1 flex flex-col">
-            <div className="w-full aspect-square rounded-md">
-              <img
-                src={products[0].imageSrc}
-                className="rounded-md w-full aspect-square"
-              />
-            </div>
-            <div className="h-12 max-h-12 overflow-hidden">
-              {products[0].title}
-            </div>
-            <div className="font-bold">{products[0].price}</div>
-          </div>
-          <div className="rounded-md bg-white w-52 h-72 border p-3 gap-1 flex flex-col">
-            <div className="w-full aspect-square rounded-md">
-              <img
-                src={products[1].imageSrc}
-                className="rounded-md w-full aspect-square"
-              />
-            </div>
-            <div className="h-12 max-h-12 overflow-hidden">
-              {products[1].title}
-            </div>
-            <div className="font-bold">{products[1].price}</div>
-          </div>
-          <div className="rounded-md bg-white w-52 h-72 border p-3 gap-1 flex flex-col">
-            <div className="w-full aspect-square rounded-md">
-              <img
-                src={products[2].imageSrc}
-                className="rounded-md w-full aspect-square"
-              />
-            </div>
-            <div className="h-12 max-h-12 overflow-hidden">
-              {products[2].title}
-            </div>
-            <div className="font-bold">{products[2].price}</div>
-          </div>
-          <div className="rounded-md bg-white w-52 h-72 border p-3 gap-1 flex flex-col">
-            <div className="w-full aspect-square rounded-md">
-              <img
-                src={products[3].imageSrc}
-                className="rounded-md w-full aspect-square"
-              />
-            </div>
-            <div className="h-12 max-h-12 overflow-hidden">
-              {products[3].title}
-            </div>
-            <div className="font-bold">{products[3].price}</div>
-          </div>
-          <div className="rounded-md bg-white w-52 h-72 border p-3 gap-1 flex flex-col">
-            <div className="w-full aspect-square rounded-md">
-              <img
-                src={products[4].imageSrc}
-                className="rounded-md w-full aspect-square"
-              />
-            </div>
-            <div className="h-12 max-h-12 overflow-hidden">
-              {products[4].title}
-            </div>
-            <div className="font-bold">{products[4].price}</div>
-          </div>
-
+          {/* <Mycomp
+            title={products[0].title}
+            imageSrc={products[0].imageSrc}
+            price={products[0].price}
+          /> */}
           {/* 여기까지 */}
+          {컴포넌트배열}
         </div>
       </div>
     </>
