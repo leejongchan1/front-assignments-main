@@ -14,7 +14,7 @@ function Mycomp(props: IProduct) {
         <img src={props.imageSrc} className="rounded-md w-full aspect-square" />
       </div>
       <div className="h-12 max-h-12 overflow-hidden">{props.title}</div>
-      <div className="font-bold">{props.price}</div>
+      <div className="font-bold">{props.price.toLocaleString()}</div>
     </div>
   );
 }
